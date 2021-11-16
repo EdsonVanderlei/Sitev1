@@ -1,0 +1,132 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 2vh;
+    height: 85vh;
+    width: 100%;
+    background-color:rgb(255, 255, 255, 0.4);
+    border-radius: 30px;
+    }
+
+.profile{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-profile{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    cursor: pointer;
+    transform: translateX(-556);
+    transform: translateX(0px);
+    transition: 4s;
+    box-shadow: 10px 10px 30px #cc2bc4;
+    
+
+}
+
+
+#bio{
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 5px;
+    font-family: sans-serif;
+    color: #cc2bc4;
+    font-weight: bolder;
+    text-align: justify;
+    margin-left: 30px;
+    width: 40%;
+    z-index: -1;
+    transform: translateX(556px);
+    opacity: 0;
+    transition: 2s;
+    text-align: center;
+    z-index: 1;
+   
+}
+
+#bio.active{
+    transform: translateX(0px);
+    z-index: 1;
+    opacity: 1 ;
+    transition: 4s;
+}
+
+#img-profile.active{
+   
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: 1s;
+}
+
+#click{
+    position: absolute;
+    color: rgb(47, 74, 196);
+    letter-spacing: 4px;
+    font-family: serif;
+    top: 160px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
+    transition: 3s;
+    
+    
+}
+
+#click::after{
+    content: "";
+    position: absolute;
+    
+    width: 0%;
+    height: 100%;
+    top: -12px;
+    left: -12px;
+    padding: 10px;
+    opacity: 0;
+    transition: 2s;
+    z-index: 1;
+}
+#click:hover:after{
+    width: 100%;
+    opacity: 1; 
+    z-index: -1;
+    background-color: rgb(158, 108, 158);
+    transition: .8s;
+    
+}
+#click:hover{
+    color: #FFFFFF;
+    transition: 1s;
+}
+
+
+#bio::after{
+    content: "";
+    position: absolute;
+    border: 1px solid #FFFFFF;
+    width: 0%;
+    height: 100%;
+    padding: 10px;
+    top: -10px;
+    left: -10px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: .8s;
+}
+#bio:hover:after{
+    opacity: 1;
+    width: 100%;
+}

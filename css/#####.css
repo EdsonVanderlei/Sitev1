@@ -1,0 +1,334 @@
+
+
+
+header{
+    position: fixed;
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.7);
+    
+}
+
+#Logo img{
+    margin-top: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+
+
+
+#nav-list{
+display: flex;
+    
+    
+}
+
+#nav-list li{
+    margin-left: 40px;
+    letter-spacing: 4px;
+    list-style: none;
+    
+    
+}
+
+#nav-list a{
+    font-weight: bold;
+    position: relative;
+    font-size: 15px;
+    justify-content: space-between;
+    color:#0F3B26;
+    text-decoration: none;
+
+}
+
+#btn-menu{
+    position: relative;
+    display: none;
+    margin-top: 2px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu-btn_burger{
+    width: 40px;
+     height: 4px;
+     position: relative;
+     background-color: white;
+     border-radius: 5px;
+    transform:  all 0s ease-in-out;
+}
+.menu-btn_burger::before,.menu-btn_burger::after{
+    content: "";
+    position: absolute;
+    border-radius: 5px;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    transition: all 0s ease-in-out;
+}
+
+.menu-btn_burger::after{
+    transform: translateY(16px);
+}
+.menu-btn_burger::before{
+    transform: translateY(-16px);
+}
+
+
+
+
+
+#box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+header.fixed{
+    background-color:#227B6B;
+   
+    z-index: 1000;
+}
+
+
+@media (max-width:999px ){
+    #nav-list{
+        position: absolute;
+        flex-direction: column;
+        top: 8vh;
+        width: 100vw;
+        opacity: 0;
+        transition: .5s;
+        background-color:white ;
+        height: 88vh;
+        justify-content: space-around;
+        align-items: center;
+        right: 0;
+       
+       
+        
+
+    }
+    
+    #nav-list.show-nav{
+        opacity: 1 !important;
+    
+    }
+    
+
+    #nav-list a{
+        color: black;
+
+    }
+    
+    #btn-menu{
+        display: flex;
+        
+    }
+
+    #btn-menu.open .menu-btn_burger{
+       transform: translateX(-50px);
+       transition: 0s;
+       box-shadow: none;
+       background: transparent;
+    }
+    #btn-menu.open .menu-btn_burger::before{
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    #btn-menu.open .menu-btn_burger::after{
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+    
+}
+#nav-list a:after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width:0 ;
+    background-color: yellowgreen;
+    height: 2px;
+    left:0;
+    transition: 0.6s;
+    
+    
+}
+#nav-list a:hover:after{
+    width: 100%;
+    opacity: 100%;
+
+}
+
+#nav-list a:hover{
+    
+    color: #FFFFFF;
+    
+
+}
+
+
+main{
+    padding-top: 8vh;
+    background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+    height:100vh;
+    background-attachment: fixed;
+    
+}
+
+.content{
+
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 2vh;
+    height: 88vh;
+    width: 100%;
+    background-color:rgb(255, 255, 255, 0.7);
+    }
+
+.social{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        height: 400px;
+        width: 50%;
+        background-color:rgb(255, 255, 255, 0.2);
+        margin-top: 200px;
+        border-radius: 20px;
+ }
+
+ .icons{
+     display: flex;
+     width: 100%;
+
+     justify-content: center;
+     
+ }
+
+ .fab{
+    font-size: 50px;
+    line-height: 100px;
+    z-index: 10;
+    position: relative;
+ }
+
+ .icons a{
+    
+    width: 100px;
+    height:100px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 50%;
+    margin: 0 40px;
+    position: relative;
+    overflow:hidden ;
+  
+
+ }
+
+.fab::before{
+   
+    font-size: 50px;
+    line-height: 100px;
+
+ }
+
+ .icons a::after{
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+     left: 0;
+     bottom: -100px;
+     transition: 0.1s;
+ }
+ .icons a:hover::after{
+  
+    bottom:0;
+ }
+
+ .icons a:hover{
+    color: #FFFFFF;
+
+ }
+
+@media(max-width:999px){
+    .icons a{
+        display: block;
+        margin:0 10px;
+        margin: auto;
+    }
+    .icons{
+        display: block;
+    }
+    
+    .fab::before{
+        display: block;
+        font-size: 30px;
+        line-height: 100px;
+    
+    
+     }
+}
+
+.hero1 {
+    background-image: url(../img/porsche-g8b321fc40_1920.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 88vh;
+}
+
+.hero2{
+    background-image: url(../img/car-g9521baf68_1920.jpg);
+    width: 100%;
+    height: 100%;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 40vh;
+}
+.text p{
+    
+    text-align: center;
+    letter-spacing: 5px;
+    font-family: sans-serif;
+    width: 50%;
+    
+  
+
+    margin: auto;
+  
+    
+    
+}
+.parallax{
+    background-attachment: fixed;
+}
+
+.hero1 h1{
+    text-align: center;
+    width: 50%;
+    margin:0 auto;
+    padding-top: 68vh;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+    
+
+}
